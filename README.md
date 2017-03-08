@@ -3,7 +3,7 @@ This repository will contain the work for 260CT Software Engineering project.
 
 Group Members
 
-Liam Judge (Project Leader),
+Liam Judge (Project Leader)
 Luke James,
 Bachir Jibril,
 Alex Robertson,
