@@ -55,7 +55,7 @@ public class UpdateMembership extends javax.swing.JFrame {
         bDelete = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCustomer = new javax.swing.JTable();
-        cbLoyaltyMembership = new javax.swing.JComboBox<>();
+        cbLoyaltyMembership = new javax.swing.JComboBox<String>();
         lMessage = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -138,7 +138,15 @@ public class UpdateMembership extends javax.swing.JFrame {
             new String [] {
                 "First Name", "Last Name", "Date of Birth", "Contact Number ", "Sessions ", "loyalty Membership"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         tblCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblCustomerMouseClicked(evt);
@@ -148,14 +156,14 @@ public class UpdateMembership extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 725, 340));
 
-        cbLoyaltyMembership.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "loyalty Membership", "standard Membership" }));
+        cbLoyaltyMembership.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "loyalty Membership", "standard Membership" }));
         getContentPane().add(cbLoyaltyMembership, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 294, 322, -1));
 
         lMessage.setForeground(new java.awt.Color(255, 0, 0));
         getContentPane().add(lMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 327, 412, 20));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoyaltyMembership/ski1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1320, 810));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 810));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
